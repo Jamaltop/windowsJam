@@ -14,7 +14,7 @@ const installBtn = document.getElementById('installYandex');
        setTimeout(()=> {
         localStorage.setItem('yandexInstalled', 'true');
         
-        window.location.href = 'main.html'; 
+        window.location.href = 'index.html'; 
        },6000) 
         
     });
@@ -23,7 +23,7 @@ const installBtn = document.getElementById('installYandex');
         localStorage.removeItem('yandexInstalled');
         alert('Яндекс удалён!');
         showLoading();
-        window.location.href = 'main.html'; 
+        window.location.href = 'index.html'; 
     });
 
 
