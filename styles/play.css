@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'MKX';
+    src: url('../fonts/MKX.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+body{
+    background: black;
+
+}
+
+header{
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    height: 150px;
+}  
+.heard{
+    font-size: 70px;
+    position: absolute;
+    top: 60px;
+    left: 43%;
+    color: whitesmoke;
+}
+.card-container{
+    width: 790px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card{
+    transition: .3s ease;
+    text-align: center;
+    align-content: center;
+    font-size: 2rem;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-top: 2px solid rgb(29,29,29);
+    background: linear-gradient(120deg,rgb(29,29,29),black);
+    filter: brightness(1.1);
+    border-radius: 30px ;
+    overflow: hidden;
+}
+
+& img{
+    width: 180px;
+}
+.card:hover{
+    box-shadow: 0px 0px 10px white;
+}
+.card:active{
+    transform: scale(.9);
+}
+.active{
+    box-shadow: 0px 0px 5px blue;
+}
+#score{
+    flex-direction: row;
+    
+    display: flex;
+    font-family: 'MKX';
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+}
+
+
+@media screen and (max-width:1000px){
+   .card{
+    width: 100px;
+    height: 100px;
+    
+   & img{
+    width:100px;
+    }
+   } 
+
+   .card-container{
+    flex-wrap: wrap;
+    width: 380px;
+   }
+   .heard{
+    font-size: 40px;
+    position: absolute;
+    left: 30%;
+   }
+   #score{
+    transform: translateY(200px);
+    position: absolute;
+    left: 20px;
+   }
+   }
+
+
+   

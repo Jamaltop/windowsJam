@@ -1,0 +1,377 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 100px;
+    filter: drop-shadow(0 0 20px  gold);
+    display: flex;
+   border: 1px solid gold;
+   border-radius: 15px;
+    justify-content: space-around;
+    align-items: center;
+    & .load button{
+        background: none;
+        border: none;
+        outline: none;
+    }
+}
+.logo{
+  position: absolute;
+  left: 45%;
+}
+.load{
+  position: absolute;
+  right: 90px;
+  & img{
+    width: 50px;
+  }
+}
+.app{
+    min-height: 100vh;
+    background-color: black;
+}
+
+main{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.player{
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+    flex-direction: column;
+    z-index: 1;
+    & .buttons{
+      position: absolute;
+      top: 50%;
+      left: 45%;
+    }
+    & h1{
+       
+        position: absolute;
+        top: 38%;
+        left: 40%;
+        font-size: 40px;
+        transition: all 0.5s ease;
+        font-weight: bolder;
+     
+       color: rgb(75, 57, 57);
+        text-shadow: 0px 0px 15px gold ;
+        background-clip: text;
+        
+        margin-bottom: 20px;
+      
+      
+    }
+    & button{
+        border: none;
+        background: none;
+        outline: none;
+    }
+    & img{
+        width: 30px;
+    }
+}
+#prev{
+    & img{
+        transform: scale(-1,1);
+    }
+}
+.design-item{
+    width: 250px;
+    height: 250px;
+    background: blue;
+    border-radius: 30% 40% 140% 20%;
+    position: absolute;
+    animation: chamgeColor 10s infinite linear,morph 12s infinite linear;
+    filter: blur(30px);
+}
+@keyframes chamgeColor{
+    0%{
+        background: red;
+    }
+    20%{
+        background: orange;
+    }
+    40%{
+        background: yellow;
+    }
+    55%{
+        background: green;
+    }
+    70%{
+        background: skyblue;
+    }
+    85%{
+        background: blue;
+    }
+    100%{
+        background: blueviolet;
+    }
+}
+
+@keyframes morph {
+    0% {
+      border-radius: 40% 60% 70% 30% / 30% 70% 60% 40%;
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      border-radius: 60% 40% 50% 50% / 50% 60% 40% 60%;
+      transform: translate(-20px, 10px) scale(1.1);
+    }
+    50% {
+      border-radius: 50% 50% 60% 40% / 60% 50% 40% 50%;
+      transform: translate(20px, -20px) scale(1.2);
+    }
+    75% {
+      border-radius: 70% 30% 40% 60% / 40% 60% 30% 70%;
+      transform: translate(-10px, -30px) scale(1.1);
+    }
+    100% {
+      border-radius: 40% 60% 70% 30% / 30% 70% 60% 40%;
+      transform: translate(0, 0) scale(1);
+    }
+  }
+  .player-data-panel{
+    width: 350px;
+    color: white;
+    height: 60px;
+    background: linear-gradient(120deg, rgb(27, 27, 27), black);
+    position: fixed;
+    border-top: 2px solid black;
+    left: calc(50% - 175px);
+    bottom: 50px;
+    border-radius: 10px;
+    padding: 5px;
+    justify-content: flex-start;
+    text-shadow: 0px 0px 10px ;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column; 
+  }
+  .player-data-controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgb(117, 113, 113);
+height: 92%;
+& button{
+  border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.1s ease;
+    background: none;
+    border: 1px solid white;    
+    width: 100px;
+    filter: drop-shadow(0 0 10px white);
+    &:active{
+       
+        transform: scale(0.9);
+       
+    }   
+}
+
+  }
+  .player-data-bar{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px whitesmoke;
+    width: 100%;
+    background-color: rgb(73, 69, 69);
+    height: 8%;
+  }
+  .player-data-progress{
+    width: 5%;
+    height: 100%;
+    background-color: blue;
+  }
+
+
+  .upload-music{
+    animation: fadeIn 1s 1;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    background: linear-gradient(120deg, rgb(27, 27, 27), black);
+    border-top: 3px solid rgb(27, 27, 27);
+z-index: 1000;
+    position: fixed;
+    left: calc(50% - 175px);
+    top: calc(50% - 150px);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    
+    align-items: flex-start;
+    gap: 10px;
+    & h4{
+        color: white;
+        text-shadow: 0px 0px 10px ;
+    }
+    
+  }
+  .upload-music-zone{ 
+    width: 100%;
+    height: 60%;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 10px gold;
+    background: url(../img/loa.png);
+    background-repeat: no-repeat;
+    background-position:center center ;
+  }
+  .upload-music-load{
+    border: 2px solid gold;
+    border-radius: 15px;
+    background: none;
+    width: 100px;
+    height: 40px;
+    background: linear-gradient(120deg, orange, rgb(27, 27, 27));
+    color: white;
+    font-weight: bolder;
+    transition: all 0.1s ease;
+  }
+  .upload-music-load:active{
+    transform:scale(0.9);
+  }
+  #file{  
+    display: none;
+  }
+  .something {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+}
+@keyframes fadeIn{
+
+  0%{
+    opacity: 0;
+
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.playlist{
+  display: flex;
+  border: 1px solid whitesmoke;
+  position: absolute;
+  left: 2%;
+  bottom: 5%;
+  
+  & button{
+    
+    background: none;
+  
+  }
+}
+.modal{
+  display: none;
+  flex-direction: column;
+  border: 1px solid whitesmoke;
+  position: absolute;
+  left: 2%;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 400px;
+  border-radius: 15px;
+animation: faleIn 2s 1 ;
+  text-shadow: 0px 0px 10px;
+  padding: 10px ;
+  background: linear-gradient(120deg,white,yellow); 
+}
+.show{
+  animation: faleIn 2s 1 ;
+}
+@keyframes nothint{
+  0%{
+    transform: scale(0.9);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes faleIn{
+  0%{
+    height:0px ;
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    height: 500px;
+  }
+}
+.skibidi{
+  animation: faleOut 2s 1 ;
+  display: none;
+}
+@keyframes faleOut{
+  0%{
+    height:500px ;
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    height: 0px;
+  }
+}
+@keyframes fafeOut{
+  0%{
+    height:0px ;
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    height: 300px;
+  }
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    header .logo{
+      left: 10%;
+    }
+    .logo img{
+      width: 50px;
+    }
+    .load{
+      right: 10px;
+    }
+    .player{
+      
+      & h1{
+        font-size: 30px;
+        align-items: center;
+        justify-content: center;  
+        
+       transform: translateX(-60px);
+      }
+      & .buttons{
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+       
+    .player-data-panel{
+      width: 300px;
+      transform: translateX(60px);
+      position: absolute;
+      bottom: 30px;
+    }
+    .modal{
+      height: 300px;
+      width: 300px;
+      animation: fafeOut 1.4s 1 ;
+      z-index: 10;
+    }
+
+
+}

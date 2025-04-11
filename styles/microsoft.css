@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(38, 38, 68);
+}
+header{
+    color: whitesmoke;
+    padding: 10px;
+    display: flex;
+   font-weight: bolder;
+    width: 100%;
+    height: 50px;
+
+    & ::placeholder{
+        color: whitesmoke;
+    } 
+       & input{
+        border-radius: 6px;
+        padding: 5px;
+        background: none;
+        border: none;
+        color: white;
+        width: 400px;
+        height: 30px;
+        margin-left: 400px;
+        border: .5px solid white;
+        
+       }
+}
+.apps{
+    position: absolute;
+    top: 200px;
+}
+.first-app{
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border: 1px solid white;    
+    flex-direction: column;
+    width: 300px;
+    color: whitesmoke;
+    font-weight: bolder;
+     & h1{
+        font-size: 20px;
+        position: absolute;
+        top: 5%;
+     }
+     & #installYandex{
+        position: absolute;
+        bottom: 10%;
+        background: none;
+        width: 100px;
+        color: whitesmoke;
+        border: 1px solid white;
+        height: 30px;
+        transition: .3s ease;
+     }
+     #removeYandex{
+        left: 10px;
+        position: absolute;
+        bottom: 10%;
+        background: none;
+        width: 100px;
+        color: whitesmoke;
+        border: 1px solid white;
+        height: 30px;
+        transition: .3s ease;
+     }
+}
+button:active{
+    transform: scale(.8);
+}
+
+
+@media screen and (max-width: 1000px){
+ header input{
+    position: absolute;
+    width: 200px;
+    top: 16px;
+    right: 10px;
+}
+.first-app{
+    width: 200px;
+    height: 200px;
+    & img{
+        transform: translateY(-15px);
+        width: 60px;
+
+    }
+    & p{
+        transform: translateY(-10px);
+    }
+    & #installYandex{
+       width: 80px;
+       right: 2%;
+    }
+    & #removeYandex{
+      font-size: 13px;
+      width: 80px;
+      position: absolute;
+      left: 2%;
+    }
+}
+
+}

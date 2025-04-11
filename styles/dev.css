@@ -1,0 +1,209 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+
+}
+body{
+    background: linear-gradient(90deg,rgb(134, 129, 129),black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100vw;
+}
+h1{
+    color: whitesmoke;
+    text-shadow: 0px 0px 10px;
+    position: absolute;
+    top: 250px;
+    animation: fadein 1.5s linear ;
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 3px;
+}
+h1 img{
+    animation: rotate 5s linear infinite;
+    width: 50px;
+    animation-delay: 2s;
+  
+}
+.otzivi{
+    border-radius: 14px;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    border: 1px solid whitesmoke;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    bottom: 0px;
+    color: whitesmoke;
+}
+.second{
+    gap: 20px;
+    flex-direction: column;
+    display: flex;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    height: 98%;
+    border: 1px solid whitesmoke;
+    position: absolute;
+    right: 20px;
+    color: whitesmoke;
+    padding: 10px;
+    & button{
+        background: none;
+        width: 100px;
+        border: 1px solid whitesmoke;
+        padding: 5px;
+        border-radius: 5px;
+        transition: .3s ease;
+        position: absolute;
+        bottom: 200px;
+        right: 38%;
+        color: whitesmoke;
+    } 
+    & input{
+        border-radius: 10px;
+        height: 70px;
+        color: whitesmoke;
+        width: 100%;
+        padding: 10px;
+        font-weight: bolder;
+        background: none;
+       border: 1px solid whitesmoke;
+        font-size: 20px;
+    }
+    & button:active{
+        transform: scale(.8);
+    }
+    & ::placeholder{
+        font-size: 20px;
+        color: whitesmoke;
+    }
+    & #num {
+        height: 40px;
+    }
+}
+.first{
+    
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    height: 98%;
+    border: 1px solid whitesmoke;
+    position: absolute;
+    left: 20px;
+    color: whitesmoke;
+    padding: 10px;
+    & button{
+        background: none;
+        width: 100px;
+        border: 1px solid whitesmoke;
+        padding: 5px;
+        border-radius: 5px;
+        transition: .3s ease;
+        position: absolute;
+        bottom: 200px;
+        left: 38%;
+        color: whitesmoke;
+    }
+    & button:active{
+        transform: scale(.8);
+    }
+    & input{
+        border-radius: 10px;
+        height: 70px;
+        width: 100%;
+        padding: 10px;
+        color: whitesmoke;
+        font-weight: bolder;
+        background: none;
+        border: 1px solid whitesmoke;
+
+
+        font-size: 20px;
+    }
+    & ::placeholder{
+       color: whitesmoke;
+       text-shadow: 0px 0px 10px;
+        font-size: 20px;
+
+    }
+}
+
+
+
+
+
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+        transform: translateY(-200px) rotate(-180deg);
+    }
+    100%{
+        transform: translateY(0px) rotate(0);
+        opacity: 1;
+    }
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 800px){
+    h1{
+        font-size: 40px;
+        top: 150px;
+    }
+    .otzivi{
+        height: 400px;
+    }
+    .first{
+        height: 100%;
+        width:50%;
+        left: 1px;
+        bottom: 0px;
+        & input{
+            height: 40px;
+            padding: 3px;
+        }
+        & ::placeholder{
+            font-size: 14.5px;
+        }
+        & button{
+            bottom: 150px;
+            left: 20%;
+        }
+       
+    }
+    .second{
+        height: 100%;
+        width: 50%;
+        right: 1px;
+        bottom: 0px;
+        & input{
+            height: 40px;
+            padding: 3px;
+        }
+        & ::placeholder{
+            font-size: 14.5px;
+        }
+        & button{
+            bottom: 150px;
+            right: 20%;
+        }
+    }
+       
+    }
+
