@@ -61,22 +61,22 @@ else{
     
 }})
 
-window.addEventListener('touchstart', (e) => {
+
+chelModal.onclick = () => {
     if(isPressed) {
         isPressed = false;
     }
-    else {
-        setTimeout(() => {
-            isPressed = true;
-            chelMessage.classList.add('pressed'); 
-        },5000)
-      
-        setTimeout(() => {
-            next.style.display = 'flex';
-        }, 6000);
-    }
-});
+else{
+  isPressed = true;
+  chelMessage.classList.add('pressed'); 
+  setTimeout(() => {
+    next.style.display = 'flex';
+  },1000)
+   
 
+    
+}
+}
 document.addEventListener('DOMContentLoaded', () => {
     const isYandexInstalled = localStorage.getItem('yandexInstalled') === 'true';
     const panel = document.querySelector('.panel-zadac');
