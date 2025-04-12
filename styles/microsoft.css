@@ -135,11 +135,23 @@ button:active{
     position: absolute;
     width: 200px;
     top: 16px;
-    right: 10px;
+    right: 20px;
+}
+.apps{
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+    position: absolute;
+    left: 100px ;
 }
 .first-app{
     width: 200px;
     height: 200px;
+    & h1{
+        transform: translateY(-15px);
+    }
     & img{
         transform: translateY(-15px);
         width: 60px;
@@ -149,15 +161,48 @@ button:active{
         transform: translateY(-10px);
     }
     & #installYandex{
+        top: 150px;
        width: 80px;
-       right: 2%;
+       right: 15px;
     }
     & #removeYandex{
       font-size: 13px;
       width: 80px;
+      top: 150px;
       position: absolute;
-      left: 2%;
+      left: 4%;
     }
+}
+.second-app{
+    width: 200px;
+    height: 200px;
+& h1{
+    position: absolute;
+    top: 240px;
+}
+    & img{
+        
+        transform: translateY(-20px);
+        width: 60px;
+    }
+    p{
+     font-size: 14px;
+     transform: translateY(-10px);
+    }
+    & #installGoogle{
+
+        transform: translateY(30px);
+        width: 80px;
+        right: 10px;
+    }
+    #removeGoogle{
+
+        width: 80px;
+        font-size: 13px;
+        left: 15px;
+        transform: translateY(30px);
+    }
+    
 }
 
 }

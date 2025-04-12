@@ -22,7 +22,7 @@ h1{
     font-size: 60px;
     letter-spacing: 3px;
 }
-h1 img{
+h1 svg{
     animation: rotate 5s linear infinite;
     width: 50px;
     animation-delay: 2s;
@@ -163,7 +163,7 @@ h1 img{
 
 @media screen and (max-width: 800px){
     h1{
-        font-size: 40px;
+        font-size: 35px;
         top: 100px;
     }
     .otzivi{

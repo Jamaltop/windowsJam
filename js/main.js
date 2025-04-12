@@ -461,3 +461,5 @@ const audio = document.getElementById("player");
                 
                    
                     brightnessSlider.dispatchEvent(new Event("input"));
+
+                    

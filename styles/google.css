@@ -168,3 +168,9 @@ body {
     0%{transform: scale(0.5); opacity: 0;}
     100%{transform: scale(1); opacity: 1;}
   }
+  @media screen and (max-width: 1000px) {
+    #search-form input{
+      width: 93%;
+      padding: 8px 10px;
+    }
+  }

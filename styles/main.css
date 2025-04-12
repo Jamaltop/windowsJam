@@ -243,12 +243,15 @@
     right: 10px;
 }
 .chel{
-    position: absolute;
-    bottom : 100px;
-    right: 50%;
-    animation: human 3s ease-out ;
-   opacity: .5;
-   transition: .3s ease;
+    position: fixed;
+    z-index: 1000!important;
+    bottom: 80px;
+    left: 45%;
+    
+    animation: infinityPath 3s ease-in-out;
+    transition:  .3s ease;
+    opacity: .5;
+    cursor: pointer
 }
 .volume{
     display: flex;
@@ -369,7 +372,7 @@
 .modal-for-chel{
     display: none;
     position: absolute;
-    bottom: 160px;
+    bottom: 187px;
     right: 42%;
     border-radius:15px ;
     padding: 5px 7px;
@@ -532,6 +535,47 @@ a{
 
 }
 
+@keyframes infinityPath {
+    0% {
+        opacity: 1;
+        transform: translate(-50%) rotate(0deg) scale(5);
+        bottom: -100px;
+        left: 50%
+    }
+
+    25% {
+        opacity: 1;
+        transform: translate(200px,-200px) rotate(180deg) scale(3);
+        bottom: 50%;
+        left: 50%
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-100%) rotate(1turn) scale(2);
+        bottom: 100%;
+        left: 50%
+    }
+
+    75% {
+        transform: translate(-200px,200px) rotate(540deg) scale(1);
+        bottom: 50%;
+        left: 50%;
+        opacity: 1
+    }
+
+    to {
+        transform: translate(0) rotate(0deg) scale(1) translateX(-50%);
+        bottom: 90px;
+        left: 48%;
+        opacity: .5
+    }
+}
+
+
+
+
+
 
 @media screen and (max-width: 1000px) {
 .clock{
@@ -563,6 +607,10 @@ a{
     position: absolute;
     left: 90px;
     
+}
+.google-installed{
+    position: absolute;
+    left: 145px;
 }
 .modals{
     z-index: 1;
@@ -628,11 +676,12 @@ height: 20px;
     height: 150px;
 }
 .modal-for-chel{
-    transform: translateY(-30px);
+    transform: translateY(-15px) translateX(90px);
+    
 }
 
 .chel{
-    animation: humanMobil 3s ease ;
+    left: 34%;
 }
 .modal-chel{
     
@@ -655,6 +704,7 @@ height: 20px;
     z-index: 1;
 
 }
+
 
 
 
