@@ -11,7 +11,7 @@ function sendOtziv() {
 
     let botToken = "8194876340:AAF8wIW1P_34xEjJVGoOyOq4OkHIIiNJKF0";
     let chatId = "1769816214";
-
+   
     let text = `👤 *Имя:* ${userName}\n💬 *Отзыв:* ${message}`;
     let url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 

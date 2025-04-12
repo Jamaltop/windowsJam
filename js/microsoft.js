@@ -25,7 +25,30 @@ const installBtn = document.getElementById('installYandex');
         showLoading();
         window.location.href = 'index.html'; 
     });
+ 
+    const google = document.querySelector('.google');
 
+const installGoogle = document.getElementById('installGoogle');
+const removeGoogle = document.getElementById('removeGoogle');
+
+installGoogle.addEventListener('click', () => {
+    if (localStorage.getItem('googleInstalled') === 'true') {
+        alert('Google уже установлен!');
+        return;
+    }
+    showLoading();
+    setTimeout(() => {
+        localStorage.setItem('googleInstalled', 'true');
+        window.location.href = 'index.html';
+    }, 6000);
+});
+
+removeGoogle.addEventListener('click', () => {
+    localStorage.removeItem('googleInstalled');
+    alert('Google удалён!');
+    showLoading();
+    window.location.href = 'index.html';
+});
 
 
 poisk.addEventListener('click', () => {

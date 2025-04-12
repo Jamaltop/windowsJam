@@ -80,6 +80,8 @@ window.addEventListener('touchstart', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const isYandexInstalled = localStorage.getItem('yandexInstalled') === 'true';
     const panel = document.querySelector('.panel-zadac');
+    
+
 
   
     const oldButton = panel.querySelector('.yandex-installed');
@@ -91,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = document.createElement('button');
         btn.style.background = 'none'
         btn.style.border = 'none'
+        btn.style.cursor = 'pointer';
         btn.className = 'yandex-installed';
         btn.innerHTML = '<img src="./img/yandex.png" alt="Yandex" width="45px">';
         btn.addEventListener('click', () => {
@@ -101,13 +104,49 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnClone = btn.cloneNode(true);
         btnClone.style.position = 'absolute';
         btnClone.style.top = '130px';
+        btnClone.style.cursor = 'pointer';
         btnClone.style.left = '70px';
         btnClone.addEventListener('click', () => {
             window.location.href = './yandex.html';
         });
         modalPusk.appendChild(btnClone);
     }
+    
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const isGoogleInstalled = localStorage.getItem('googleInstalled') === 'true';
+    const panel = document.querySelector('.panel-zadac');
+
+    const oldButton = panel.querySelector('.google-installed');
+    if (oldButton) {
+        oldButton.remove();
+    }
+
+    if (isGoogleInstalled) {
+        const btn = document.createElement('button');
+        btn.style.background = 'none';
+        btn.style.cursor = 'pointer';
+        btn.style.border = 'none';
+        btn.className = 'google-installed';
+        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width = '40px' viewBox="0 0 488 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#d5d9e2" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>`;
+        btn.addEventListener('click', () => {
+            window.location.href = './google.html';
+        });
+
+        panel.appendChild(btn);
+
+        const btnClone = btn.cloneNode(true);
+        btnClone.style.position = 'absolute';
+        btnClone.cursor = 'pointer';
+        btnClone.style.top = '132px';
+        btnClone.style.left = '130px';
+        btnClone.addEventListener('click', () => {
+            window.location.href = './google.html';
+        });
+        modalPusk.appendChild(btnClone);
+    }
+});
+
 
 pauseMusic.onclick = () => {
     if (pauseMusic.src.endsWith('play.png')) {
@@ -275,7 +314,7 @@ suggestionBox.style.width = '150px';
 modalPusk.appendChild(suggestionBox);
 
 
-const apps = ['Yandex', 'JamStore'];
+const apps = ['Yandex', 'JamStore','Google'];
 
 
 puskInput.addEventListener('input', () => {
@@ -328,6 +367,23 @@ puskInput.addEventListener('input', () => {
           alert('JamStore запускается... 🔥');
             window.location.href = 'microsoft.html';
         }
+        else if (match === 'Google') {
+            if(!localStorage.getItem('googleInstalled')){
+                alert('Google не установлен. Пожалуйста, установите Google перед запуском.');
+                if(confirm('Хотите установить Google?')) {
+                    window.location.href = 'microsoft.html';
+                }
+                else{
+                    return
+                }
+            }
+            else{
+                alert('Google запускается... 🔥');
+                window.location.href = 'google.html';
+            }
+           
+        }
+        
       });
 
       suggestionBox.appendChild(item);
