@@ -28,9 +28,15 @@ heroes.forEach((value) => {
 });
 
 function handlepick() {
-    if (pickedcard.length < 2 && !this.classList.contains("active")) {
+    // Запрет клика на уже открытую карту или повторный клик на ту же
+    if (
+        pickedcard.length < 2 &&
+        !this.classList.contains("active") &&
+        pickedcard[0] !== this
+    ) {
         this.innerHTML = `<img src="./img/${this.dataset.info}">`;
         pickedcard.push(this);
+
         if (pickedcard.length === 2) {
             setTimeout(chekMatch, 1000);
         }
