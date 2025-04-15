@@ -292,11 +292,10 @@ button:active{
   .input-container::after {
     content: "|";
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 720px;
+    top: 18px;
     color: #000;
-    animation: blink 0.7s step-end infinite;
+    animation: blink 0.7s step-end 2.2s infinite;
   }
   
   @keyframes blink {
