@@ -1,72 +1,4 @@
-const poisk = document.querySelector('.open-poisk');
-
-const yandex = document.querySelector('.yandex');
-
-const installBtn = document.getElementById('installYandex');
-    const removeBtn = document.getElementById('removeYandex');
-
-    installBtn.addEventListener('click', () => {
-        if(localStorage.getItem('yandexInstalled') === 'true') {
-            alert('Яндекс уже установлен!');
-            return;
-        }
-       showLoading();
-       setTimeout(()=> {
-        localStorage.setItem('yandexInstalled', 'true');
-        
-        window.location.href = 'index.html'; 
-       },6000) 
-        
-    });
-
-    removeBtn.addEventListener('click', () => {
-        localStorage.removeItem('yandexInstalled');
-        alert('Яндекс удалён!');
-        showLoading();
-        window.location.href = 'index.html'; 
-    });
- 
-    const google = document.querySelector('.google');
-
-const installGoogle = document.getElementById('installGoogle');
-const removeGoogle = document.getElementById('removeGoogle');
-
-installGoogle.addEventListener('click', () => {
-    if (localStorage.getItem('googleInstalled') === 'true') {
-        alert('Google уже установлен!');
-        return;
-    }
-    showLoading();
-    setTimeout(() => {
-        localStorage.setItem('googleInstalled', 'true');
-        window.location.href = 'index.html';
-    }, 6000);
-});
-
-removeGoogle.addEventListener('click', () => {
-    localStorage.removeItem('googleInstalled');
-    alert('Google удалён!');
-    showLoading();
-    window.location.href = 'index.html';
-});
-
-
-poisk.addEventListener('click', () => {
-    alert('В разработке!')
-})
-
-function showLoading() {
-    loading.style.display = 'flex';
-    
-    setTimeout(() => {
-        loading.style.opacity = '1';
-        setTimeout(() => {
-            loading.style.display = 'none'; 
-            yandex.style.display = 'flex';
-            
-        }, 5000);
-    }, 1000);
-}
+// Сначала создаём анимацию и div загрузки
 const style = document.createElement('style');
 style.innerHTML = `
 @keyframes spin {
@@ -99,3 +31,67 @@ loading.innerHTML = `
 `;
 loading.style.display = 'none';
 document.body.appendChild(loading);
+
+// Теперь вся логика установки
+const poisk = document.querySelector('.open-poisk');
+
+const yandex = document.querySelector('.yandex');
+const installBtn = document.getElementById('installYandex');
+const removeBtn = document.getElementById('removeYandex');
+
+installBtn.addEventListener('click', () => {
+    if(localStorage.getItem('yandexInstalled') === 'true') {
+        alert('Яндекс уже установлен!');
+        return;
+    }
+    showLoading();
+    setTimeout(() => {
+        localStorage.setItem('yandexInstalled', 'true');
+        window.location.href = 'index.html'; 
+    }, 6000);
+});
+
+removeBtn.addEventListener('click', () => {
+    localStorage.removeItem('yandexInstalled');
+    alert('Яндекс удалён!');
+    showLoading();
+    window.location.href = 'index.html'; 
+});
+
+const google = document.querySelector('.google');
+const installGoogle = document.getElementById('installGoogle');
+const removeGoogle = document.getElementById('removeGoogle');
+
+installGoogle.addEventListener('click', () => {
+    if (localStorage.getItem('googleInstalled') === 'true') {
+        alert('Google уже установлен!');
+        return;
+    }
+    showLoading();
+    setTimeout(() => {
+        localStorage.setItem('googleInstalled', 'true');
+        window.location.href = 'index.html';
+    }, 6000);
+});
+
+removeGoogle.addEventListener('click', () => {
+    localStorage.removeItem('googleInstalled');
+    alert('Google удалён!');
+    showLoading();
+    window.location.href = 'index.html';
+});
+
+poisk?.addEventListener('click', () => {
+    alert('В разработке!');
+});
+
+function showLoading() {
+    loading.style.display = 'flex';
+    setTimeout(() => {
+        loading.style.opacity = '1';
+        setTimeout(() => {
+            loading.style.display = 'none';
+            if (yandex) yandex.style.display = 'flex';
+        }, 5000);
+    }, 1000);
+}
