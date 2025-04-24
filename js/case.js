@@ -64,7 +64,7 @@ function spin (){
        
         isSpin = true;
         
-        let audio = new Audio('sound/spin.mp3');
+        let audio = new Audio('audio/spin.mp3');
     let timeout = setTimeout(() => {
         isSpin = false
         wheel.style.transition = 'none';
