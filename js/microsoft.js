@@ -16,7 +16,7 @@ installBtn.addEventListener('click', () => {
     showLoading();
     setTimeout(() => {
         localStorage.setItem('yandexInstalled', 'true');
-        window.location.href = 'index.html'; 
+        window.location.href = 'main.html'; 
     }, 6000);
 });
 
@@ -24,7 +24,7 @@ removeBtn.addEventListener('click', () => {
     localStorage.removeItem('yandexInstalled');
     alert('Яндекс удалён!');
     showLoading();
-    window.location.href = 'index.html'; 
+    window.location.href = 'main.html'; 
 });
 
 const google = document.querySelector('.google');
@@ -39,7 +39,7 @@ installGoogle.addEventListener('click', () => {
     showLoading();
     setTimeout(() => {
         localStorage.setItem('googleInstalled', 'true');
-        window.location.href = 'index.html';
+        window.location.href = 'main.html';
     }, 6000);
 });
 
@@ -47,7 +47,7 @@ removeGoogle.addEventListener('click', () => {
     localStorage.removeItem('googleInstalled');
     alert('Google удалён!');
     showLoading();
-    window.location.href = 'index.html';
+    window.location.href = 'main.html';
 });
 
 poisk?.addEventListener('click', () => {

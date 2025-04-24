@@ -1,140 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows by Jamal</title>
-    <link rel="icon" type="img/png" href="./img/human.png">
-    <link rel="stylesheet" href="./styles/main.css">
-    <script src="./js/main.js" defer></script>  
-     <script src="./js/play.js" defer></script>
-    <script src="./js/microsoft.js" defer></script>
-    <script src="./js/developer.js" defer></script>
-    <script src="./js/yandex.js" defer></script>
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Windows 11 от Джамала</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-    <div class="modal-for-pusk" >
-         <input class="pusk-input" type="text" placeholder="Поиск..." style="display: flex; background: none;  color: white;">
-         
-            <button class="mstore">
-            
-                <a href="microsoft.html"><img class="mstore-img" src="./img/microsoft.png" alt="" width="50px"></a>
-            </button> 
-          
-            
-         
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .ray {
+      position: absolute;
+      bottom: -100px;
+      width: 4px;
+      height: 100px;
+      background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.7), transparent);
+      opacity: 0;
+      animation: fly 1.5s linear infinite;
+      animation-delay: calc(var(--i) * 0.5s);
+      left: calc(10% + var(--i) * 15%);
+      border-radius: 2px;
+      filter: blur(2px);
+    }
+
+    .ray::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -3px;
+      width: 10px;
+      height: 100%;
+      background: linear-gradient(to top, transparent, red, orange, yellow, green, blue, indigo, violet, transparent);
+      opacity: 0.5;
+      filter: blur(4px);
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+      padding-top: 40px;
+    }
+
+    .wheel-and-hamster {
+      --dur: 1s;
+      width: 12em;
+      height: 12em;
+      font-size: 14px;
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .content {
+      color: white;
+      padding: 0 20px;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    button {
        
-    </div>
-    <div class="modal-chel">
-        
-        <div class="message-chel">НАЖМИ ЛЮБУЮ КЛАВИШУ ИЛИ НАЖМИ НА МЕНЯ</div> 
-        <div class="next-chel"><p>Привет!Ты скорее всего не понял что происходит и хочешь получить дополнительную информацию.
-            Я хочу создать предпросмотр виндовс на телефоне в виде сайта так как виндовс работает только на компютерах.
-            Так же я ищу BackEnd developer для совместной разработки одного интерестного проекта.
-            Для того чтобы связаться со мной нажми <a href="./developer.html">сюда</a>,а если ты устал то можешь поиграть игру где ты должен отгадать одинаковые карты
-            (ее тоже создовал я) нажми <a href="./play.html">сюда</a> и поиграй ее!
-        
-        </p></div>
-    </div>
-   <div class="chel">
-    <img src="./img/bot-v1.webp" alt=""  >
-   </div>
-    <div class="modal-for-lang">
-        <div class="main">
-            <h1>Рассладка клавиатуры</h1>
-            <div class="rus">
-                <div class="first-lang"><p>РУС</p></div>
-                <div class="second-lang">Русский</div>
-            </div>
-            <div class="eng">
-                <div class="first-lang"><p>ENG</p></div>
-                <div class="second-lang">English</div>
-            </div>
-        </div>
-    </div>
-    <div class="modal-for-chel" style="background-color: whitesmoke;">
-        <p>Нажми на меня чтобы получить дополнительную информацию!...</p>
-    </div>
-    <div class="modals">
-        <div class="first">
-            <div class="head">
-                <img src="./img/spotyfi.png" alt="">
-                <h1>Spotify</h1>
-            </div>
-            <div class="main">
-                <h2 class="ispolnitel">Lana Del Rey</h2>
-                <p class="nazvaniye">Cinnammon girl</p>
-                <img class="foto" src="./img/lana.jpg" alt="" width="100px">
-            </div>
-            <div class="footer">
-                <img id="prev" src="./img/prev.png" alt="">
-                <img id="pause" src="./img/pause.png" alt="">
-                <img id="next" src="./img/next.png" alt="">
-            </div>
-        </div>
-        <div class="second">
-            <div class="wifi">
-                <img src="./img/wifi-white.png" alt="">
-            </div>
-            <div class="bluetooth">
-                <img src="./img/bluetooth-white.png" alt="">
-            </div>
-            <div class="samolet">
-                <img src="./img/airline.png" alt="">
-            </div>
-            <div class="volume">
-            
-              <img src="./img/unmute.png" alt="">
-                <audio id="player">
-                    <source src="audio.mp3" type="audio/mpeg">
-                </audio>
-                
-                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
-                
-               
-                
-                
-                
-            </div>
-            <div class="yarkost">
-                <img src="./img/yarkost.png" alt="">
-                
 
-<input type="range" id="brightnessSlider" min="0.5" max="1" step="0.01" value="1">
+      outline: 0;
+      border: 0;
+      width: 240px;
+      height: 60px;
+      border-radius: 0.5em;
+      box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
+      overflow: hidden;
+      margin-top: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
+    button div {
+      transform: translateY(0px);
+      width: 100%;
+      transition: 0.6s cubic-bezier(.16,1,.3,1);
+    }
 
+    button div span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      transform: translateY(10px);
+      padding: 0 1em;
+    }
 
+    button div:nth-child(1) {
+      background-color: #1e90ff;
+    }
 
-            </div>
-        </div>
-    </div>
-    <div class="app">
-        
-      <div class="something"></div>
-        <div class="panel-zadac">
-            <button class="pusk"><img src="./img/pusk.png" alt=""></button>
+    button div:nth-child(2) {
+      background-color: #21dc62;
+    }
 
-        </div>
-      
-        <div class="language">
-            <p class="langua" style="color: whitesmoke;">ENG</p></div>
-        <div class="all">
-            
-        <img src="./img/wifi-white.png" alt="" width="30px">
-        <img src="./img/batery.png" alt="" width="30px">
-        <img src="./img/unmute.png" alt="" width="30px">
-        </div>
-    </div>
+    button:hover {
+      box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
+    }
 
-    
+    button:hover div {
+      transform: translateY(-60px);
+    }
+
+    button p {
+      color: #ffffff;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+a{
+    text-decoration: none;
+}
+  /* From Uiverse.io by Nawsome */ 
+.wheel-and-hamster {
+  --dur: 1s;
+  position: relative;
+  width: 12em;
+  height: 12em;
+  font-size: 14px;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+  position: absolute;
+}
+
+.wheel,
+.spoke {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wheel {
+  background: radial-gradient(100% 100% at center,hsla(0,0%,60%,0) 47.8%,hsl(0,0%,60%) 48%);
+  z-index: 2;
+}
+
+.hamster {
+  animation: hamster var(--dur) ease-in-out infinite;
+  top: 50%;
+  left: calc(50% - 3.5em);
+  width: 7em;
+  height: 3.75em;
+  transform: rotate(4deg) translate(-0.8em,1.85em);
+  transform-origin: 50% 0;
+  z-index: 1;
+}
+
+.hamster__head {
+  animation: hamsterHead var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,55%);
+  border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+  box-shadow: 0 -0.25em 0 hsl(30,90%,80%) inset,
+		0.75em -1.55em 0 hsl(30,90%,90%) inset;
+  top: 0;
+  left: -2em;
+  width: 2.75em;
+  height: 2.5em;
+  transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+  animation: hamsterEar var(--dur) ease-in-out infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 50%;
+  box-shadow: -0.25em 0 hsl(30,90%,55%) inset;
+  top: -0.25em;
+  right: -0.25em;
+  width: 0.75em;
+  height: 0.75em;
+  transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+  animation: hamsterEye var(--dur) linear infinite;
+  background-color: hsl(0,0%,0%);
+  border-radius: 50%;
+  top: 0.375em;
+  left: 1.25em;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.hamster__nose {
+  background: hsl(0,90%,75%);
+  border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+  top: 0.75em;
+  left: 0;
+  width: 0.2em;
+  height: 0.25em;
+}
+
+.hamster__body {
+  animation: hamsterBody var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,90%);
+  border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+  box-shadow: 0.1em 0.75em 0 hsl(30,90%,55%) inset,
+		0.15em -0.5em 0 hsl(30,90%,80%) inset;
+  top: 0.25em;
+  left: 2em;
+  width: 4.5em;
+  height: 3em;
+  transform-origin: 17% 50%;
+  transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+  clip-path: polygon(0 0,100% 0,70% 80%,60% 100%,0% 100%,40% 80%);
+  top: 2em;
+  left: 0.5em;
+  width: 1em;
+  height: 1.5em;
+  transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+  animation: hamsterFRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 80%,hsl(0,90%,75%) 80%);
+  transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+  animation: hamsterFLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 80%,hsl(0,90%,85%) 80%);
+  transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+  border-radius: 0.75em 0.75em 0 0;
+  clip-path: polygon(0 0,100% 0,100% 30%,70% 90%,70% 100%,30% 100%,40% 90%,0% 30%);
+  top: 1em;
+  left: 2.8em;
+  width: 1.5em;
+  height: 2.5em;
+  transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+  animation: hamsterBRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 90%,hsl(0,90%,75%) 90%);
+  transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+  animation: hamsterBLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 90%,hsl(0,90%,85%) 90%);
+  transform: rotate(-25deg);
+}
+
+.hamster__tail {
+  animation: hamsterTail var(--dur) linear infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 0.25em 50% 50% 0.25em;
+  box-shadow: 0 -0.2em 0 hsl(0,90%,75%) inset;
+  top: 1.5em;
+  right: -0.5em;
+  width: 1em;
+  height: 0.5em;
+  transform: rotate(30deg) translateZ(-1px);
+  transform-origin: 0.25em 0.25em;
+}
+
+.spoke {
+  animation: spoke var(--dur) linear infinite;
+  background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
+		linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
+}
+
+/* Animations */
+@keyframes hamster {
+  from, to {
+    transform: rotate(4deg) translate(-0.8em,1.85em);
+  }
+
+  50% {
+    transform: rotate(0) translate(-0.8em,1.85em);
+  }
+}
+
+@keyframes hamsterHead {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes hamsterEye {
+  from, 90%, to {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hamsterEar {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes hamsterBody {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes hamsterFRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(50deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-30deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterFLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-30deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes hamsterBRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-60deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(20deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterBLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(20deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hamsterTail {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(30deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(10deg) translateZ(-1px);
+  }
+}
+
+@keyframes spoke {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
+  </style>
 </head>
 <body>
+  <div class="background">
+    <div class="ray" style="--i:0;"></div>
+    <div class="ray" style="--i:1;"></div>
+    <div class="ray" style="--i:2;"></div>
+    <div class="ray" style="--i:3;"></div>
+    <div class="ray" style="--i:4;"></div>
+    <div class="ray" style="--i:5;"></div>
+  </div>
 
-<div class="clock" id="clock"></div>
+  <div class="wrapper">
+    <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+      <div class="wheel"></div>
+      <div class="hamster">
+        <div class="hamster__body">
+          <div class="hamster__head">
+            <div class="hamster__ear"></div>
+            <div class="hamster__eye"></div>
+            <div class="hamster__nose"></div>
+          </div>
+          <div class="hamster__limb hamster__limb--fr"></div>
+          <div class="hamster__limb hamster__limb--fl"></div>
+          <div class="hamster__limb hamster__limb--br"></div>
+          <div class="hamster__limb hamster__limb--bl"></div>
+          <div class="hamster__tail"></div>
+        </div>
+      </div>
+      <div class="spoke"></div>
+    </div>
 
+    <div class="content">
+      <p>Приветствую вас на сайте Windows 11 от Джамала, тут вы можете полностью посмотреть как работает Windows 11 на компьютере и также посмотреть многие фишки от меня.</p>
+      <p>На сайте вы можете нажать на человечка, который вам поможет, и посмотреть, что я там хочу. Прям там же можно оставить отзыв или предложение для совместной разработки проекта — сообщение сразу придёт к моему телеграм-боту!</p>
+      <p>Также вы можете поиграть в игру, которую я сделал. За победу вы получите уникальные JamCoin-ы и сможете за них купить приложение, где можно крутить кейсы и выигрывать крутые награды!</p>
+      <p>Зайдя в JamStore, вы сможете посмотреть и скачать приложения, которые тоже делал я. Всё в этом проекте — моё. Приятного просмотра! 😊</p>
 
-
+      <button>
+        <div>
+          <span><p>НАЧАТЬ ПРОСМОТР</p></span>
+          
+        </div>
+        <div>
+            <a href="./main.html"><span><p>Удачи!</p><p>:D</p></span></a>
+          
+        </div>
+      </button>
+    </div>
+  </div>
 </body>
 </html>
