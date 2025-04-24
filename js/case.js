@@ -73,7 +73,7 @@ function spin (){
         audio.play();
         setTimeout(() => {
             audio.pause();
-        },8000)
+        },8500)
         wheel.style.transition = 'all 8s ease';
         wheel.style.transform = ` perspective(1000px) rotateY( ${1080 + randomPrise * 45}deg)`;
         setTimeout(() => {
