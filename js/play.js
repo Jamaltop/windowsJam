@@ -1,5 +1,6 @@
 const cardboard = document.querySelector(".card-container");
 const scorePoint = document.querySelector("#score-point");
+window.money = 0
 const heard = document.querySelector(".heard-left");
 let cards = [];
 let pickedcard = [];
@@ -48,6 +49,7 @@ function chekMatch() {
         pickedcard[0].classList.add("active");
         pickedcard[1].classList.add("active");
         welldone.play();
+        window.money ++;
         score++;
         scorePoint.innerHTML = score;
         if (score === 4) {

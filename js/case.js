@@ -58,6 +58,7 @@ function spin (){
     if(isSpin){
         return;
     }
+   
     else{
         let randomPrise = Math.floor(Math.random()*7);
        inventory_data.push(arr[randomPrise]);
