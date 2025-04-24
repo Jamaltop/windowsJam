@@ -29,6 +29,8 @@ function sendOtziv() {
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
+            window.money++;
+            localStorage.setItem('jamcoins', window.money); 
             alert("Отзыв отправлен!");
             document.getElementById("name").value = "";
             document.getElementById("otziv").value = "";
@@ -67,6 +69,7 @@ function sendWork() {
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
+            window.money++;
             alert("Запрос отправлен!");
             document.getElementById("work").value = "";
             document.getElementById("num").value = "";

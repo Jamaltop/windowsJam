@@ -110,6 +110,52 @@ button:active{
         transition: .3s ease;
      }
 }
+.third-app{
+  padding: 10px;
+  width: 300px;
+  color: whitesmoke;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px; 
+  border: 1px solid white;
+  height: 300px;
+  flex-direction: column;
+& img{
+  width: 100px;  
+}
+  & h1{
+      font-size: 24px;
+      position: absolute;
+      top: 5%;
+   }
+   & p{
+      margin-top: 20px;
+   }
+   & #installCS{
+      position: absolute;
+      bottom: 10%;
+      background: none;
+      width: 100px;
+      color: whitesmoke;
+      border: 1px solid white;
+      height: 30px;
+      transition: .3s ease;
+   }
+   #removeCS{
+      left: 700px;
+      position: absolute;
+      bottom: 10%;
+      background: none;
+      width: 100px;
+      color: whitesmoke;
+      border: 1px solid white;
+      height: 30px;
+      transition: .3s ease;
+   }
+}
+
 
 
 .input {

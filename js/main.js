@@ -146,6 +146,38 @@ document.addEventListener('DOMContentLoaded', () => {
         modalPusk.appendChild(btnClone);
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const isCSGOCaseInstalled = localStorage.getItem('csgoCaseInstalled') === 'true';
+    const panel = document.querySelector('.panel-zadac');
+
+    const oldButton = panel.querySelector('.csgo-installed');
+    if (oldButton) {
+        oldButton.remove();
+    }
+
+    if (isCSGOCaseInstalled) {
+        const btn = document.createElement('button');
+        btn.style.background = 'none';
+        btn.style.cursor = 'pointer';
+        btn.style.border = 'none';
+        btn.className = 'csgo-installed';
+        btn.innerHTML = `<img src="./img/cs.png" width="40px" alt="CS:GO">`;
+        btn.addEventListener('click', () => {
+            window.location.href = './case.html';
+        });
+
+        panel.appendChild(btn);
+
+        const btnClone = btn.cloneNode(true);
+        btnClone.style.position = 'absolute';
+        btnClone.style.top = '130px'; // меняй под свой дизайн
+        btnClone.style.left = '250px'; // тоже можно подвинуть
+        btnClone.addEventListener('click', () => {
+            window.location.href = './case.html';
+        });
+        modalPusk.appendChild(btnClone);
+    }
+});
 
 
 pauseMusic.onclick = () => {
