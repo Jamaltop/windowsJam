@@ -1,0 +1,447 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    background: 
+    radial-gradient(circle 150px at 50% 53%, rgb(0, 0, 65), black, transparent),
+    radial-gradient(circle 500px at 50% 0%, rgb(63, 63, 63), black);
+    
+    color: whitesmoke;
+    font-weight: bolder;
+}
+@font-face{
+    font-family: 'Cs';
+    src: url(./font/font.ttf);
+}
+
+.card{
+    box-shadow: 0px 0px 20px rgb(21, 228, 228);
+    font-family: 'Cs';
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;   
+    position: absolute;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+background: rgb(255, 232, 232 , 0.1);
+backdrop-filter: blur(10px);
+transform: rotateY(calc(var(--i) *45deg)) translateZ(400px);
+    & img{
+        width: 150px;
+    }
+}
+.card-color{
+    height: 10px;
+    width: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px    ;
+}
+.conteiner{
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.wheel{
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
+    width: 200px;
+height: 200px;
+position: absolute;
+}
+.wheel-container{
+    display: flex;
+    min-height: inherit;
+    justify-content: space-around;
+    
+    height: 80vh;
+    align-items: center; 
+    width: inherit;
+    position: relative;
+}
+#price-result{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items:center;
+    justify-content: center;
+    backdrop-filter: blur(25px);
+}
+#price-item{
+    
+    width: 300px;
+}
+.marker{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgb(199, 0, 93);
+    top: calc(50% - 190px);
+    clip-path: polygon(0 0,100% 0,50% 100%);
+    z-index: 10;
+}
+.modal{
+    display: flex;
+    position: absolute;
+    top:0;
+    width: 200px;
+    height: 100px;
+    border: 1px solid white;
+    
+}
+/* From Uiverse.io by CristianMontoya98 */ 
+.btn1 {
+   
+    bottom: 13%;
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: rgb(27, 27, 27);
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   .btn1:hover {
+    color: black;
+   }
+   
+   .btn1:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   .btn1:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }
+h1{
+     transform: translateY(20px);
+}
+/* From Uiverse.io by Navarog21 */ 
+#inventory-btn {
+    position: absolute;
+    right: 60px;
+    bottom: 50px;
+    width: 11em;
+    height: 4em;
+    outline: none;
+    transition: 0.1s;
+    background-color: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ddebf0;
+  }
+  
+  #clip {
+    --color: #2761c3;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: 5px double var(--color);
+    box-shadow: inset 0px 0px 15px #195480;
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  .inventory{
+    position: fixed;
+    right: -400px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px white;
+align-items: start;
+    justify-content: start;
+    width: 300px;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    & img {
+      width: 200px;
+    }
+  }
+  
+  .arrow {
+    position: absolute;
+    transition: 0.2s;
+    background-color: #2761c3;
+    top: 35%;
+    width: 11%;
+    height: 30%;
+  }
+  
+  #leftArrow {
+    left: -13.5%;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  }
+  
+  #rightArrow {
+    -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+    left: 102%;
+  }
+  
+  #inventory-btn:hover #rightArrow {
+    background-color: #27c39f;
+    left: -15%;
+    animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+  }
+  
+  #inventory-btn:hover #leftArrow {
+    background-color: #27c39f;
+    left: 103%;
+    animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+  }
+  
+  .corner {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    background-color: #2761c3;
+    box-shadow: inset 1px 1px 8px #2781c3;
+    transform: scale(1) rotate(45deg);
+    transition: 0.2s;
+  }
+  
+  #rightTop {
+    top: -1.98em;
+    left: 91%;
+  }
+  
+  #leftTop {
+    top: -1.96em;
+    left: -3.0em;
+  }
+  
+  #leftBottom {
+    top: 2.10em;
+    left: -2.15em;
+  }
+  
+  #rightBottom {
+    top: 45%;
+    left: 88%;
+  }
+  
+  #inventory-btn:hover #leftTop {
+    animation: 0.1s ease-in-out 0.05s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  #inventory-btn:hover #rightTop {
+    animation: 0.1s ease-in-out 0.15s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  #inventory-btn:hover #rightBottom {
+    animation: 0.1s ease-in-out 0.25s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  #inventory-btn:hover #leftBottom {
+    animation: 0.1s ease-in-out 0.35s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  #inventory-btn:hover .corner {
+    transform: scale(1.25) rotate(45deg);
+  }
+  
+  #inventory-btn:hover #clip {
+    animation: 0.2s ease-in-out 0.55s both greenLight8;
+    --color: #27c39f;
+  }
+  
+  @keyframes changeColor8 {
+    from {
+      background-color: #2781c3;
+    }
+  
+    to {
+      background-color: #27c39f;
+    }
+  }
+  
+  @keyframes lightEffect8 {
+    from {
+      box-shadow: 1px 1px 5px #27c39f;
+    }
+  
+    to {
+      box-shadow: 0 0 2px #27c39f;
+    }
+  }
+  
+  @keyframes greenLight8 {
+    from {
+    }
+  
+    to {
+      box-shadow: inset 0px 0px 32px #27c39f;
+    }
+  }
+  
+  @keyframes leftArrow8 {
+    from {
+      transform: translate(0px);
+    }
+  
+    to {
+      transform: translateX(10px);
+    }
+  }
+  
+  @keyframes rightArrow8 {
+    from {
+      transform: translate(0px);
+    }
+  
+    to {
+      transform: translateX(-10px);
+    }
+  }
+ 
+  
+  @keyframes slide {
+    from {
+      right: -300px;
+    }
+  
+    to {
+      right: 0px;
+    }
+  }
+  @keyframes slideOut {
+    from {
+      right: 0px;
+    }
+  
+    to {
+      right: -300px;
+    }
+  }
+
+
+  @media (max-width: 1000px) {
+
+    .conteiner {
+      width: 400px;
+      padding: 10px;
+      
+      transform: translateX(-30px);
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .wheel-container {
+      flex-direction: column;
+      height: auto;
+      gap: 5px;
+    }
+  
+    .wheel {
+      
+      width: 120px;
+      height: 150px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+  
+    .card {
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px);
+      & img {
+        width: 100px;
+      }
+    }
+  
+    .marker {
+      width: 25px;
+      height: 25px;
+      top: calc(50% - 338px);
+    }
+  
+    .btn1 {
+      position: relative;
+      bottom: auto;
+      width: 100px;
+      height: 40px;
+      transform: translateY(-200px);
+      font-size: 16px;
+    }
+  
+    #price-item {
+      width: 180px;
+    }
+  
+    .inventory {
+      
+      width: 200px;
+      right: -300px;
+      padding: 20px;
+      justify-content: start;
+      align-items: start;
+      gap: 10px;
+      & img {
+        width: 100px;
+      }
+    }
+  
+    #inventory-btn {
+      right: 20px;
+      bottom: 300px;
+      width: 9em;
+      height: 3.5em;
+      font-size: 12px;
+    }
+  
+    .corner {
+      width: 3em;
+      height: 3em;
+    }
+  
+    #rightTop, #leftTop, #leftBottom, #rightBottom {
+      transform: scale(0.8) rotate(45deg);
+    }
+  
+    .succsess-alert {
+      height: auto;
+      padding: 8px;
+      font-size: 10px;
+      gap: 5px;
+      right:30px ;
+      position: absolute;
+    }
+  }
+  

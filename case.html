@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/case.css">
+    <script src="./js/case.js.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="conteiner">
+    <h1 style="font-size: 20px;">JAMWIN</h1>
+    <div class="wheel-container">
+        <div class="marker"></div>
+        <div class="wheel">
+            <div style="--i:1" class="card" data-prize="Knife">
+                <div class="card-color" style="background:gold;"></div>
+                <img src="./assets/item-1.png" alt="">
+                <div class="card-name">Knife</div>
+            </div>
+            <div style="--i:2" class="card" data-prize="gold-knife">
+                <div class="card-color" style="background: rgb(226, 197, 65);"></div>
+                <img src="./assets/item-2.png" alt="">
+                <div class="card-name">Gold Knife</div>
+            </div>
+            <div style="--i:3" class="card" data-prize="secret-knife">
+                <div class="card-color" style="background: rgb(214, 73, 18);"></div>
+                <img src="./assets/item-3.png" alt="">
+                <div class="card-name">Secret Knife</div>
+            </div>
+            <div style="--i:4" class="card" data-prize="gold-aug">
+                <div class="card-color" style="background: rgb(95, 101, 158);"></div>
+                <img src="./assets/item-4.png" alt="">
+                <div class="card-name">Gold Aug</div>
+            </div>
+            <div style="--i:5" class="card" data-prize="gold-knife">
+                <div class="card-color" style="background: rgb(11, 36, 143);"></div>
+                <img src="./assets/item-5.png" alt="">
+                <div class="card-name">AWP Classic</div>
+            </div>
+            <div style="--i:6" class="card" data-prize="gold-knife">
+                <div class="card-color" style="background: rgb(172, 34, 172);"></div>
+                <img src="./assets/item-6.png" alt="">
+                <div class="card-name">Kerambit</div>
+            </div>
+            <div style="--i:7" class="card" data-prize="gold-knife">
+                <div class="card-color" style="background: rgb(163, 8, 168);"></div>
+                <img src="./assets/item-7.png" alt="">
+                <div class="card-name">P90</div>
+            </div>
+            <div style="--i:8" class="card" data-prize="gold-knife">
+                <div class="card-color" style="background: rgb(144, 19, 194);"></div>
+                <img src="./assets/item-8.png" alt="">
+                <div class="card-name">PURPLE AWP</div>
+            </div>
+    
+    
+        </div>
+        <button class="btn1"> SPIN</button>
+        <div id="price-result">
+           
+<div  class="fixed top-4 right-4 z-50">
+    <div class="flex flex-col gap-2 w-60 sm:w-72 text-[10px] sm:text-xs">
+      <div
+        class="succsess-alert cursor-default flex items-center justify-between w-full h-12 sm:h-14 rounded-lg bg-[#232531] px-[10px]"
+      >
+        <div class="flex gap-2">
+          <div class="text-[#2b9875] bg-white/5 backdrop-blur-xl p-1 rounded-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-white">done successfully :)</p>
+            <p  class="text-whitesmoke-500 salam" ></p>
+          </div>
+        </div>
+        <button
+          class="text-gray-600 hover:bg-white/5 p-1 rounded-md transition-colors ease-linear"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+            <img id="price-item" src="" alt="">
+        </div>
+    </div>
+    
+<button id="inventory-btn">
+  Inventory
+  <div id="clip">
+      <div id="leftTop" class="corner"></div>
+      <div id="rightBottom" class="corner"></div>
+      <div id="rightTop" class="corner"></div>
+      <div id="leftBottom" class="corner"></div>
+  </div>
+  <span id="rightArrow" class="arrow"></span>
+  <span id="leftArrow" class="arrow"></span>
+</button>
+    <div class="inventory">
+
+    </div>
+  
+</div>
+
+    
+</body>
+</html>
