@@ -22,10 +22,10 @@ const audioPercent = document.querySelector("#player-data-percent");
 const playImg = document.getElementById("playImg");
 
 const audios = [
-  { name: "audio1", src: "./audio/1.mp3" },
-  { name: "audio2", src: "./audio/2.mp3" },
-  { name: "audio3", src: "./audio/3.mp3" },
-  { name: "audio4", src: "./audio/4.mp3" },
+  { name: "audio1", src: "../audio/1.mp3" },
+  { name: "audio2", src: "../audio/2.mp3" },
+  { name: "audio3", src: "../audio/3.mp3" },
+  { name: "audio4", src: "../audio/4.mp3" },
 ];
 
 let isPlaying = false;
@@ -46,7 +46,7 @@ controls.play.addEventListener("click", () => {
     currentMusic.play();
   }
   isPlaying = !isPlaying;
-  playImg.src = isPlaying ? "./img/pause.png" : "./img/play.png";
+  playImg.src = isPlaying ? "../img/pause.png" : "../img/play.png";
 });
 
 controls.next.addEventListener("click", () => {
@@ -54,7 +54,7 @@ controls.next.addEventListener("click", () => {
   currentMusic.src = audios[currentMusicIndex].src;
   currentMusic.play();
   isPlaying = true;
-  playImg.src = "./img/pause.png";
+  playImg.src = "../img/pause.png";
 });
 
 controls.prev.addEventListener("click", () => {
@@ -62,7 +62,7 @@ controls.prev.addEventListener("click", () => {
   currentMusic.src = audios[currentMusicIndex].src;
   currentMusic.play();
   isPlaying = true;
-  playImg.src = "./img/pause.png";
+  playImg.src = "../img/pause.png";
 });
 
 controls.mute.addEventListener("click", () => {
@@ -70,9 +70,9 @@ controls.mute.addEventListener("click", () => {
   let muteMessage = document.querySelector(".mute-message");
 
   if (muteImg.src.endsWith("unmute.png")) {
-    muteImg.src = "./img/mute.png";
+    muteImg.src = "../img/mute.png";
   } else {
-    muteImg.src = "./img/unmute.png";
+    muteImg.src = "../img/unmute.png";
   }
 
   if (!muteMessage) {
@@ -133,7 +133,7 @@ file.addEventListener("change", (e) => {
         currentMusic.src = this.dataset.src;
         currentMusic.play();
         isPlaying = true;
-        playImg.src = "./img/pause.png";
+        playImg.src = "../img/pause.png";
       });
 
       item.style.background = "none";
@@ -160,7 +160,7 @@ file.addEventListener("change", (e) => {
       });
     });
 
-    playImg.src = "./img/pause.png";
+    playImg.src = "../img/pause.png";
     modalik.style.fontSize = "20px";
   };
 });
@@ -178,6 +178,7 @@ playlist.onclick = () => {
   modalik.style.display = "flex";
   modalik.classList.add("show");
 };
+
 addMusic.addEventListener("click", () => {
-  alert("Нажми на квадратик по середение,чтобы загрузить свой аудиофайл!");
+  alert("Нажми на квадратик по середение, чтобы загрузить свой аудиофайл!");
 });

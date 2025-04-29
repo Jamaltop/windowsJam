@@ -12,9 +12,9 @@ const heroes = [
     'card-1.png', 'card-2.png', 'card-3.png', 'card-4.png'
 ];
 
-let unluck = new Audio('./audio/unlock.wav');
-let welldone = new Audio('./audio/well-done.wav');
-let exselent = new Audio('./audio/exselent.wav');
+let unluck = new Audio('../audio/unlock.wav');
+let welldone = new Audio('../audio/well-done.wav');
+let exselent = new Audio('../audio/exselent.wav');
 
 heroes.sort(() => 0.5 - Math.random());
 
@@ -35,7 +35,7 @@ function handlepick() {
         !this.classList.contains("active") &&
         pickedcard[0] !== this
     ) {
-        this.innerHTML = `<img src="./img/${this.dataset.info}">`;
+        this.innerHTML = `<img src="../img/${this.dataset.info}">`;
         pickedcard.push(this);
 
         if (pickedcard.length === 2) {
@@ -55,7 +55,7 @@ function chekMatch() {
         if (score === 4) {
             window.money++;
             localStorage.setItem('jamcoins', window.money); 
-            window.location.href= "./main.html"
+            window.location.href= "main.html"
             alert("You Won");
             setTimeout(() => exselent.play(), 2000);
         }

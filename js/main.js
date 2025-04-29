@@ -27,7 +27,7 @@ const modalPusk = document.querySelector('.modal-for-pusk')
 const puskInput = document.querySelector('.pusk-input')
 
 let music = [
-    './img/lana.jpg','./img/ammusic.jpeg','./img/weekend.jpg',
+    '../img/lana.jpg','../img/ammusic.jpeg','../img/weekend.jpg',
 ]
 
 
@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.style.border = 'none'
         btn.style.cursor = 'pointer';
         btn.className = 'yandex-installed';
-        btn.innerHTML = '<img src="./img/yandex.png" alt="Yandex" width="45px">';
+        btn.innerHTML = '<img src="../img/yandex.png" alt="Yandex" width="45px">';
         btn.addEventListener('click', () => {
-            window.location.href = './yandex.html';
+            window.location.href = 'yandex.html';
         });
       
         panel.appendChild(btn);
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnClone.style.cursor = 'pointer';
         btnClone.style.left = '70px';
         btnClone.addEventListener('click', () => {
-            window.location.href = './yandex.html';
+            window.location.href = 'yandex.html';
         });
         modalPusk.appendChild(btnClone);
     }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.className = 'google-installed';
         btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width = '40px' viewBox="0 0 488 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#d5d9e2" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>`;
         btn.addEventListener('click', () => {
-            window.location.href = './google.html';
+            window.location.href = 'google.html';
         });
 
         panel.appendChild(btn);
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnClone.style.top = '132px';
         btnClone.style.left = '130px';
         btnClone.addEventListener('click', () => {
-            window.location.href = './google.html';
+            window.location.href = 'google.html';
         });
         modalPusk.appendChild(btnClone);
     }
@@ -161,9 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.style.cursor = 'pointer';
         btn.style.border = 'none';
         btn.className = 'csgo-installed';
-        btn.innerHTML = `<img src="./img/cs.png" width="40px" alt="CS:GO">`;
+        btn.innerHTML = `<img src="../img/cs.png" width="40px" alt="CS:GO">`;
         btn.addEventListener('click', () => {
-            window.location.href = './case.html';
+            window.location.href = 'case.html';
         });
 
         panel.appendChild(btn);
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnClone.style.top = '130px'; // меняй под свой дизайн
         btnClone.style.left = '250px'; // тоже можно подвинуть
         btnClone.addEventListener('click', () => {
-            window.location.href = './case.html';
+            window.location.href = 'case.html';
         });
         modalPusk.appendChild(btnClone);
     }
@@ -182,9 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 pauseMusic.onclick = () => {
     if (pauseMusic.src.endsWith('play.png')) {
-        pauseMusic.src = './img/pause.png';
+        pauseMusic.src = '../img/pause.png';
     } else {
-        pauseMusic.src = './img/play.png';
+        pauseMusic.src = '../img/play.png';
     }
 };
 nextMusic.onclick = () => {
