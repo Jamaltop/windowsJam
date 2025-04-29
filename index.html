@@ -436,6 +436,44 @@ a{
     transform: rotate(-1turn);
   }
 }
+@media screen and (max-width: 1000px) {
+  .content p {
+    font-size: 14px;
+  }
+  button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .wrapper {
+    padding-top: 20px;
+  }
+}
+
+/* Для экранов шириной менее 600px (мобильные устройства) */
+@media screen and (max-width: 600px) {
+  .content p {
+    font-size: 20px;
+  }
+  button {
+    width: 160px;
+    height: 40px;
+    font-size: 14px;
+  }
+  #start-button p {
+    font-size: 13px;
+    transform: translateY(-10px);
+  }
+  .wrapper {
+    padding-top: 15px;
+  }
+  .wheel-and-hamster {
+    width: 12em;
+    height: 12em;
+    transform: translateY(10px);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -474,7 +512,7 @@ a{
       <p>Также вы можете поиграть в игру, которую я сделал. За победу вы получите уникальные JamCoin-ы и сможете за них купить приложение, где можно крутить кейсы и выигрывать крутые награды!</p>
       <p>Зайдя в JamStore, вы сможете посмотреть и скачать приложения, которые тоже делал я. Всё в этом проекте — моё. Приятного просмотра! 😊</p>
 
-      <button>
+      <button id="start-button">
         <div>
           <span><p>НАЧАТЬ ПРОСМОТР</p></span>
           
